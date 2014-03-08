@@ -1,4 +1,4 @@
-mangods-nodejs-spring-elasticsearch-angularjs
+mongodb-nodejs-spring-elasticsearch-angularjs
 =============================================
 
-Mangodb, Nodejs, Spring, Elasticsearch, AngularJs all together!
+MongoDB, Nodejs, Spring, Elasticsearch, AngularJs all together!
