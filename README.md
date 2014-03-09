@@ -28,6 +28,5 @@ Then, please follow these instructions :
 
 1. `git clone https://github.com/Java-Geeks/mongodb-nodejs-angularjs-elasticsearch.git`
 2. `cd mongodb-nodejs-angularjs-elasticsearch`
-3. `vagrant init`
-4. `vagrant up`
-5. browse the following URL: `http://localhost:9100`
+3. `vagrant up`
+4. browse the following URL: `http://localhost:9100`
