@@ -30,3 +30,15 @@ Then, please follow these instructions :
 2. `cd mongodb-nodejs-angularjs-elasticsearch`
 3. `vagrant up`
 4. browse the following URL: `http://localhost:9100`
+
+### Optional : packaging the VM
+
+To package the VM for further reuse without re-installing all dependencies, you can proceed as follows:
+
+1. Package the VM into a vagrant box: `vagrant package --output precise32-mongodb-nodejs-elasticsearch.box`
+2. Add the box to vagrant managed VMs: `vagrant box add precise32-mangodb-nodejs-elasticsearch precise32-mongodb-nodejs-elasticsearch.box`
+3. Edit the `Vagrantfile`, set the property `config.vm.box` to `precise32-mangodb-nodejs-elasticsearch` and comment properties `config.vm.box_url` and `config.vm.provision`
+4. Remove or save the box file `precise32-mongodb-nodejs-elasticsearch.box` to a backup directory
+5. Run `vagrant up`
+
+Your VM will now be up and running without re-installing all required packages to run the application.
