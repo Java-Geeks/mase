@@ -12,14 +12,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # doesn't already exist on the user's system.
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-  # Provision VM with mangodb, nodejs and elasticsearch
+  # Provision VM with mongodb, java, tomcat and elasticsearch
   config.vm.provision :shell, :path => "bootstrap.sh"
 
   # MongoDB port
   config.vm.network :forwarded_port, guest: 27017, host: 27017
 
-  # NodeJS port
-  config.vm.network :forwarded_port, guest: 9100, host: 9100
+  # Tomcat port
+  config.vm.network :forwarded_port, guest: 8080, host: 8080 
 
   # ElasticSearch port
   config.vm.network :forwarded_port, guest: 9200, host: 9200

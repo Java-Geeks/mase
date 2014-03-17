@@ -7,15 +7,13 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 sudo apt-get update
 sudo apt-get install mongodb-10gen
 
-#install nodejs
-echo '### NodeJs ###'
-sudo apt-get install -y python-software-properties
-sudo apt-get update
-sudo apt-get install -y nodejs
-
 #install Java 7
 echo '### Installing Java7 ###'
 sudo apt-get install -y openjdk-7-jre-headless
+
+#install tomcat 7
+echo '### Installing Tomcat7 ###'
+sudo apt-get install -y tomcat7
 
 #install elasticsearch
 echo '### Installing ElasticSearch ###'
