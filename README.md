@@ -28,8 +28,8 @@ To run the application, please ensure that you have Virtual Box and Vagrant corr
 
 Then, please follow these instructions :
 
-1. `git clone https://github.com/Java-Geeks/mongodb-spring-angularjs-elasticsearch.git`
-2. `cd mongodb-spring-angularjs-elasticsearch`
+1. `git clone https://github.com/Java-Geeks/mase.git`
+2. `cd mase`
 3. `vagrant up`
 4. browse the following URL: `http://localhost:8080`
 
