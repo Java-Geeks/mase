@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <packaging>war</packaging>
     <artifactId>mase-web</artifactId>
     <name>MASE web module</name>
     <description>Web module providing MASE front end</description>
@@ -30,7 +31,6 @@
             <scope>provided</scope>
         </dependency>
 
-
         <!-- spring web mvc -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -42,6 +42,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>3.2.8.RELEASE</version>
+        </dependency>
+
+        <!-- jackson -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-jaxrs</artifactId>
+            <version>1.9.13</version>
         </dependency>
 
         <!-- slf4j -->
