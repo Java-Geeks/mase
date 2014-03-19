@@ -1,6 +1,6 @@
 # About MASE
 
-MASE stands for <strong>M</strong>ongodb-<strong>A<strong>ngularjs-</strong>S</strong>pring-<strong>E</strong>lasticsearch and uses many other modern web technologies :
+MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</strong>pring-<strong>E</strong>lasticsearch and uses many other modern web technologies :
 
 ![mase](https://github.com/Java-Geeks/mase/raw/master/site/mase.png)
 
