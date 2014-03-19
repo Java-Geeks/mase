@@ -1,6 +1,6 @@
 # About MASE
 
-MASE stands for __M__ongodb-__A__ngularjs-__S__pring-__E__lasticsearch and uses many other modern web technologies :
+MASE stands for <strong>M</strong>ongodb-<strong>A<strong>ngularjs-</strong>S</strong>pring-<strong>E</strong>lasticsearch and uses many other modern web technologies :
 
 ![mase](https://github.com/Java-Geeks/mase/raw/master/site/mase.png)
 
@@ -15,7 +15,6 @@ MASE stands for __M__ongodb-__A__ngularjs-__S__pring-__E__lasticsearch and uses 
 * [MongoDB](https://www.mongodb.org/)
 * [Spring Data MongoDB](http://projects.spring.io/spring-data-mongodb/)
 * [Spring MVC](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
-* [Spring Security] (http://projects.spring.io/spring-security/)
 * [ElasticSearch](http://www.elasticsearch.org/)
 
 The application is a simple yet complete online todo list manager.
