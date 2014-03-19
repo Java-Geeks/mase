@@ -1,6 +1,8 @@
-# Introduction
+# About MASE
 
-This repository aims to provide a complete use case of modern web application using the following technologies:
+MASE stands for __M__ongodb-__A__ngularjs-__S__pring-__E__lasticsearch and uses many other modern web technologies :
+
+![mase](https://github.com/Java-Geeks/mase/raw/master/site/mase.png)
 
 ## Client side
 
