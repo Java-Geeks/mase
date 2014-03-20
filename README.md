@@ -31,8 +31,16 @@ Then, please follow these instructions :
 
 1. `git clone https://github.com/Java-Geeks/mase.git`
 2. `cd mase`
-3. `vagrant up`
-4. browse the following URL: `http://localhost:8080`
+3. `mvn install`
+4. `vagrant up`
+5. browse the following URL: `http://localhost:8080/mase-web`
+
+> For the first launch, tell tomcat to deploy the app exploded war
+
+`vagrant ssh` <br/>
+`sudo ln -s /vagrant/mase-web/target/mase-web /var/lib/tomcat7/webapps/mase-web` <br />
+`exit`
+
 
 ### Optional : packaging the VM
 
