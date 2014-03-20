@@ -1,0 +1,13 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
+.DS_Store
+
+# Maven
+target/
+
+# Vagrant
+.vagrant/

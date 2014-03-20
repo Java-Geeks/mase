@@ -28,3 +28,9 @@ sudo apt-get install -y curl
 #install Git
 echo '### Installing Git ###'
 sudo apt-get install -y git
+
+#create symbolic link for the web app
+if [ ! -d "/vagrant/mase-web/target/mase-web" ]; then
+    mkdir -p /vagrant/mase-web/target/mase-web
+fi
+sudo ln -s /vagrant/mase-web/target/mase-web /var/lib/tomcat7/webapps/mase-web
