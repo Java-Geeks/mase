@@ -35,7 +35,7 @@ Then, please follow these instructions :
 5. `mvn clean install`
 6. browse the following URL: `http://localhost:8080/mase-web`
 
-> application support live deployment, each time you modify your web application, run mvn clean install, refresh you browser and the new version will be available
+> application supports live deployment, each time you modify your web application, run mvn clean install, refresh you browser and the new version will be available
 
 ### Optional : packaging the VM
 
