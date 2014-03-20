@@ -35,7 +35,7 @@ Then, please follow these instructions :
 4. `vagrant up`
 5. browse the following URL: `http://localhost:8080/mase-web`
 
-> For the first launch, tell tomcat to deploy the app exploded war
+> For the first launch, tell tomcat to deploy the exploded war app
 
 `vagrant ssh` <br/>
 `sudo ln -s /vagrant/mase-web/target/mase-web /var/lib/tomcat7/webapps/mase-web` <br />
