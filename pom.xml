@@ -12,6 +12,7 @@
     <modules>
         <module>mase-core</module>
         <module>mase-web</module>
+        <module>mase-ws</module>
     </modules>
 
     <build>

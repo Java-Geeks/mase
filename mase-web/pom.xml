@@ -9,57 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>war</packaging>
     <artifactId>mase-web</artifactId>
-    <name>MASE web module</name>
+	<name>MASE web module</name>
     <description>Web module providing MASE front end</description>
 
-    <dependencies>
+    <build>
+        <outputDirectory>target/www</outputDirectory>
+        <sourceDirectory>src/main/webapp/app</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/webapp/app</directory>
+            </resource>
+            <resource>
+                <directory>src/main/webapp/resources</directory>
+            </resource>
+        </resources>
+    </build>
 
-        <!-- mase core -->
-        <dependency>
-            <artifactId>mase-core</artifactId>
-            <groupId>io.github.javageeks</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- javaee web api -->
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- spring web mvc -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>3.2.8.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>3.2.8.RELEASE</version>
-        </dependency>
-
-        <!-- jackson -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-            <version>1.9.13</version>
-        </dependency>
-
-        <!-- slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
-        </dependency>
-    </dependencies>
-
-	<build>
-		<finalName>mase-web</finalName>
-	</build>
 </project>
