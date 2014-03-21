@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
+sudo apt-get update
+
+#install apache server
+echo "### Installing Apache ###"
+sudo apt-get install -y apache2
+
 #install mangodb
 echo '### Installing MongoDB ###'
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-sudo apt-get update
 sudo apt-get install mongodb-10gen
 
 #install Java 7
@@ -30,7 +35,8 @@ echo '### Installing Git ###'
 sudo apt-get install -y git
 
 #create symbolic link for the web app
-if [ ! -d "/vagrant/mase-web/target/mase-web" ]; then
-    mkdir -p /vagrant/mase-web/target/mase-web
+sudo rm -rf /var/www
+if [ ! -d "/vagrant/mase-web/target/www" ]; then
+    mkdir -p /vagrant/mase-web/target/www
 fi
-sudo ln -s /vagrant/mase-web/target/mase-web /var/lib/tomcat7/webapps/mase-web
+sudo ln -fs /vagrant/mase-web/target/www /var/www
