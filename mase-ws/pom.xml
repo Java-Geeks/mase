@@ -11,7 +11,7 @@
 
     <packaging>war</packaging>
     <artifactId>mase-ws</artifactId>
-    <name>MASE RESTful web services module</name>
+    <name>MASE web services module</name>
     <description>RESTful Web services module</description>
 
     <dependencies>
