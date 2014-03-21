@@ -23,5 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # ElasticSearch port
   config.vm.network :forwarded_port, guest: 9200, host: 9200
+  
+  # Apache port
+  config.vm.network :forwarded_port, guest: 80, host:9876
 
 end

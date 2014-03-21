@@ -1,0 +1,8 @@
+<div>
+	<!--Body content-->
+	<ul>
+		<li ng-repeat="todo in todos">
+			<p>Title : {{todo.title}}, Done ? <input readonly="readonly" type="radio" name="todo-status" value="{{todo.status}}"/></p>
+		</li>
+	</ul>
+</div>

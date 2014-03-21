@@ -60,6 +60,6 @@
     </dependencies>
 
 	<build>
-		<finalName>mase-web</finalName>
+		<finalName>mase-ws</finalName>
 	</build>
 </project>

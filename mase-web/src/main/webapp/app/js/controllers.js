@@ -2,10 +2,8 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+var maseControllers = angular.module('maseAppControllers', []);
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+maseControllers.controller('TodoListCtrl', ['$scope', 'Todo', function ($scope, Todo) {
+  $scope.todos = Todo.query();
+}]);
