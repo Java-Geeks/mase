@@ -9,8 +9,6 @@
 
     <mvc:annotation-driven />
 
-    <mvc:resources mapping="/static/**" location="/static/"/>
-
     <context:component-scan base-package="io.github.javageeks.mase.web"/>
 
 </beans>
