@@ -2,6 +2,7 @@ package io.github.javageeks.mase.service.test;
 
 import io.github.javageeks.mase.model.Todo;
 import io.github.javageeks.mase.service.TodoService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class TodoServiceTest {
     @Autowired
     private TodoService todoService;
 
+    @Ignore
     @Test
     public void testTodoService() {
 
