@@ -18,8 +18,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # MongoDB port
   config.vm.network :forwarded_port, guest: 27017, host: 27017
 
+  # Apache port
+  config.vm.network :forwarded_port, guest: 80, host: 9000
+
   # Tomcat port
-  config.vm.network :forwarded_port, guest: 8080, host: 8080 
+  config.vm.network :forwarded_port, guest: 8080, host: 9100
 
   # ElasticSearch port
   config.vm.network :forwarded_port, guest: 9200, host: 9200
