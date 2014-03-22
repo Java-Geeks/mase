@@ -35,9 +35,15 @@ sudo apt-get install -y curl
 echo '### Installing Git ###'
 sudo apt-get install -y git
 
-#create symbolic link for the web app
+#create a symbolic link for the web app to be served by apache web server
 sudo rm -rf /var/www
 if [ ! -d "/vagrant/mase-web/target/www" ]; then
     mkdir -p /vagrant/mase-web/target/www
 fi
 sudo ln -fs /vagrant/mase-web/target/www /var/www
+
+#create a symbolic link for the web services app to be served by apache tomcat
+if [ ! -d "/vagrant/mase-ws/target/mase-ws" ]; then
+    mkdir -p /vagrant/mase-ws/target/mase-ws
+fi
+sudo ln -fs /vagrant/mase-ws/target/mase-ws /var/lib/tomcat7/webapps/mase-ws
