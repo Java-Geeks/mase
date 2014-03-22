@@ -1,7 +1,6 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         version="3.0">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
 
 	<session-config>
 		<session-timeout>30</session-timeout>
@@ -12,12 +11,17 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/mase-core-context.xml</param-value>
 	</context-param>
+	<context-param>
+		<param-name>spring.profiles.default</param-name>
+		<param-value>dev</param-value>
+	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>
-			org.springframework.web.context.request.RequestContextListener</listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
 	</listener>
 
 	<!-- Spring MVC -->
