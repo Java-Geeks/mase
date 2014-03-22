@@ -1,8 +1,19 @@
 <div>
 	<!--Body content-->
-	<ul>
-		<li ng-repeat="todo in todos">
-			<p>Title : {{todo.title}}, Done ? <input readonly="readonly" type="radio" name="todo-status" value="{{todo.status}}"/></p>
-		</li>
-	</ul>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Done ?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="todo in todos">
+				<td>{{todo.title}}</td>
+				<td>{{todo.description}}</td>
+				<td>{{todo.status}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

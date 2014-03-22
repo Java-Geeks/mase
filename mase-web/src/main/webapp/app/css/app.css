@@ -1,30 +1,44 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+	padding-top: 20px;
+	padding-bottom: 40px;
 }
 
-.menu:before {
-  content: "[";
+.muted {
+	color: #999999;
 }
 
-.menu:after {
-  content: "]";
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
 }
 
-.menu > li {
-  display: inline;
+.container-narrow>hr {
+	margin: 30px 0;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+/* Main marketing message and sign up button */
+.jumbotron {
+	text-align: center;
+	background-color: white !important;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.jumbotron h1 {
+	font-size: 72px;
+	line-height: 1;
+}
+
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+	margin: 60px 0;
+}
+
+.marketing p+h4 {
+	margin-top: 28px;
 }
