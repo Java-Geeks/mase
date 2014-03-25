@@ -1,11 +1,17 @@
 <div>
 	<!--Body content-->
+	<form id="create-todo" ng-submit="createTodo(newTodo);">
+		<input type="text" ng-model="newTodo.title">
+		<input type="text" ng-model="newTodo.description">
+		<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+	</form>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
 				<th>Title</th>
 				<th>Description</th>
 				<th>Done ?</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -13,6 +19,7 @@
 				<td>{{todo.title}}</td>
 				<td>{{todo.description}}</td>
 				<td>{{todo.status}}</td>
+				<td><a ng-click="deleteTodo(todo)">delete</a>
 			</tr>
 		</tbody>
 	</table>

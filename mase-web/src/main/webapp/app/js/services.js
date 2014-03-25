@@ -8,7 +8,5 @@ var baseUrl = 'http://localhost\\:9100';
 
 maseServices.factory('Todo', ['$resource',
   function($resource){
-    return $resource(baseUrl + '/mase-ws/todos', {}, {
-        query: { method: 'GET', isArray: true }
-  });
+    return $resource(baseUrl + '/mase-ws/todos/:id', {id : '@id'});
 }]);
