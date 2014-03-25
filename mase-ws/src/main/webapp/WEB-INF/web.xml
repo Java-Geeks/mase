@@ -41,7 +41,7 @@
 
 	<filter>
 		<filter-name>cors</filter-name>
-		<filter-class>io.github.javageeks.mase.web.CORSFilter</filter-class>
+		<filter-class>io.github.javageeks.mase.web.util.CORSFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>cors</filter-name>
