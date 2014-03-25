@@ -26,16 +26,15 @@ public class TodoServiceTest {
 
         //create a todo for test
         Todo todo = new Todo();
-        todo.setId(1);
         todo.setUserId(1);
         todo.setTitle("Test Todo");
         todo.setDescription("Todo used for test");
         todo.setStatus(false);
-        todoService.create(todo);
+        todoService.saveOrUpdate(todo);
 
         // test findById
-        Todo t = todoService.findById(1);
-        assertEquals(1, t.getId());
+        Todo t = todoService.findById("1");
+        assertEquals("1", t.getId());
         assertEquals(1, t.getUserId());
         assertEquals("Test Todo", t.getTitle());
         assertEquals("Todo used for test", t.getDescription());
