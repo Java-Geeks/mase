@@ -5,14 +5,9 @@ import io.github.javageeks.mase.service.TodoService;
 
 import java.util.List;
 
-import javax.ws.rs.core.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Todo rest web service.
@@ -26,36 +21,33 @@ public class TodoController {
 	@RequestMapping(value = "/todos", method = RequestMethod.GET)
 	public @ResponseBody
 	List<Todo> getAllTodo() {
+        // return all todos for user in session
 		return todoService.findAll();
 	}
 
 	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.GET)
 	public @ResponseBody
-	Todo getTodo(@PathVariable long todoId) {
+	Todo getTodo(@PathVariable String todoId) {
 		return todoService.findById(todoId);
 	}
 
-	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/todos", method = RequestMethod.POST)
 	public @ResponseBody
-	String createTodo(Todo todo) {
-		todoService.create(todo);
-		return todo.toString();
+	Todo createTodo(@RequestBody Todo todo) {
+        return todoService.saveOrUpdate(todo);
 	}
 
-	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/todos", method = RequestMethod.PUT)
 	public @ResponseBody
-	String editTodo(Todo todo) {
-		// update with mongo template save method
-		todoService.create(todo);
-		return todo.toString();
+	Todo editTodo(@RequestBody Todo todo) {
+		return todoService.saveOrUpdate(todo);
 	}
 
 	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.DELETE)
 	public @ResponseBody
-	String deleteTodo(@PathVariable long todoId) {
+	void deleteTodo(@PathVariable String todoId) {
 		Todo todo = todoService.findById(todoId);
 		todoService.delete(todo);
-		return Response.ok().toString();
 	}
 
 }
