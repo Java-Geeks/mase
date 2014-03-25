@@ -1,4 +1,4 @@
-package io.github.javageeks.mase.web;
+package io.github.javageeks.mase.web.util;
 
 import java.io.IOException;
 
