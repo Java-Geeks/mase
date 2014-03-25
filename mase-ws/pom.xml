@@ -59,7 +59,39 @@
         </dependency>
     </dependencies>
 
-	<build>
-		<finalName>mase-ws</finalName>
-	</build>
+    <build>
+        <finalName>mase-ws</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <warName>mase-ws</warName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <warFile>target/mase-ws.war</warFile>
+                    <path>/</path>
+                    <port>8888</port>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
