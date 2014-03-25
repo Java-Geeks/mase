@@ -18,7 +18,8 @@
         <constructor-arg ref="mongoDbFactory" />
     </bean>
 
-    <bean id="todoRepository" class="io.github.javageeks.mase.repository.impl.TodoRepositoryImpl" />
+    <mongo:repositories base-package="io.github.javageeks.mase.repository"/>
+
     <bean id="todoService" class="io.github.javageeks.mase.service.impl.TodoServiceImpl" />
 
     <context:annotation-config/>

@@ -1,37 +1,44 @@
 package io.github.javageeks.mase.repository;
 
 import io.github.javageeks.mase.model.Todo;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
 /**
  * Interface for todo repository.
  */
-public interface TodoRepository {
+public interface TodoRepository extends MongoRepository<Todo, String> {
 
     /**
-     * Save a todo.
-     * @param todo the todo to save
+     * Find todo list by user id.
+     * @param userId the user id
+     * @return the todo list for the given user
      */
-    void save(Todo todo);
+    List<Todo> findByUserId(long userId);
 
     /**
-     * Remove a todo.
-     * @param todo the todo to remove
+     * Find todo list by title.
+     * @param userId the userId
+     * @param title the todo title
+     * @return the todo list with the given todo title
      */
-    void remove(Todo todo);
+    List<Todo> findByUserIdAndTitleLike(long userId, String title);
 
     /**
-     * Find a todo by id.
-     * @param id the todo id
-     * @return the todo if any or null if no todo is found with the given id
+     * Find todo list by description.
+     * @param userId the user id
+     * @param description the todo description
+     * @return the todo list with the given todo description
      */
-    Todo findById(long id);
+    List<Todo> findByUserIdAndDescriptionLike(long userId, String description);
 
     /**
-     * Find all todos.
-     * @return all todos
+     * Find todo list by todo status.
+     * @param userId the user id
+     * @param status the todo status
+     * @return the todo list with the given todo status
      */
-    List<Todo> findAll();
+    List<Todo> findByUserIdAndStatusIsTrue(long userId, boolean status);
 
 }
