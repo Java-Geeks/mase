@@ -9,12 +9,30 @@ import java.util.List;
  */
 public interface TodoService {
 
-    void create(Todo todo);
+    /**
+     * save or update a todo.
+     * @param todo the todo to save or update
+     * @return the created or updated todo
+     */
+    Todo saveOrUpdate(Todo todo);
 
+    /**
+     * Delete a todo.
+     * @param todo the todo to delete
+     */
     void delete(Todo todo);
 
-    Todo findById(long id);
+    /**
+     * Find a todo by its Id.
+     * @param id the todo id
+     * @return the todo with the given id or null if no todo found with the given id
+     */
+    Todo findById(String id);
 
+    /**
+     * Return all todos.
+     * @return all todos
+     */
     List<Todo> findAll();
 
 }

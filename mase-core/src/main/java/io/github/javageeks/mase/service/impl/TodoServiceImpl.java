@@ -18,18 +18,18 @@ public class TodoServiceImpl implements TodoService {
     private TodoRepository todoRepository;
 
     @Override
-    public void create(Todo todo) {
-        todoRepository.save(todo);
+    public Todo saveOrUpdate(Todo todo) {
+        return todoRepository.save(todo);
     }
 
     @Override
     public void delete(Todo todo) {
-        todoRepository.remove(todo);
+        todoRepository.delete(todo);
     }
 
     @Override
-    public Todo findById(long id) {
-        return todoRepository.findById(id);
+    public Todo findById(String id) {
+        return todoRepository.findOne(id);
     }
 
     @Override
