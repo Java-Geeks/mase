@@ -22,6 +22,8 @@
 
     <bean id="todoService" class="io.github.javageeks.mase.service.impl.TodoServiceImpl" />
 
+    <bean id="userService" class="io.github.javageeks.mase.service.impl.UserServiceImpl" />
+
     <context:annotation-config/>
 
 </beans>
