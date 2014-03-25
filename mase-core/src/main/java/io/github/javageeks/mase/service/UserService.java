@@ -30,6 +30,13 @@ public interface UserService {
     /**
      * Find a user by email and password.
      * @param email the user email
+     * @return the user with the given email or null if no user found
+     */
+    User findByEmail(String email);
+
+    /**
+     * Find a user by email and password.
+     * @param email the user email
      * @param password the user password
      * @return the user with the given email and password or null if no user found
      */
