@@ -28,7 +28,7 @@ public class TodoRepositoryTest {
         todoRepository.deleteAll();
 
         Todo todo = new Todo();
-        todo.setUserId(1);
+        todo.setUserId("1");
         todo.setTitle("Todo1");
         todo.setDescription("Todo1 for user1");
         todo.setStatus(false);

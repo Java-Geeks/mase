@@ -12,7 +12,7 @@ public class Todo {
     @Id
     private String id;
 
-    private long userId;
+    private String userId;
 
     private String title;
 
@@ -28,11 +28,11 @@ public class Todo {
         this.id = id;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
