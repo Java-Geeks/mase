@@ -37,7 +37,7 @@ public class TodoController {
         return todoService.saveOrUpdate(todo);
 	}
 
-	@RequestMapping(value = "/todos", method = RequestMethod.PUT)
+	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.PUT)
 	public @ResponseBody
 	Todo editTodo(@RequestBody Todo todo) {
 		return todoService.saveOrUpdate(todo);

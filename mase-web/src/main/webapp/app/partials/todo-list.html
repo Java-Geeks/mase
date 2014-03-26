@@ -1,24 +1,36 @@
 <div>
 	<!--Body content-->
 	<form id="create-todo" ng-submit="createTodo(newTodo);">
-		<input type="text" ng-model="newTodo.title">
-		<input type="text" ng-model="newTodo.description">
+		<input type="text" ng-model="newTodo.title" placeholder="Todo">
+		<input type="text" ng-model="newTodo.description" placeholder="What needs to be done ?" style="width:180px;">
 		<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
 	</form>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
+				<th>Done ?</th>
 				<th>Title</th>
 				<th>Description</th>
-				<th>Done ?</th>
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="todo in todos">
-				<td>{{todo.title}}</td>
-				<td>{{todo.description}}</td>
-				<td>{{todo.status}}</td>
+			<tr ng-repeat="todo in todos" ng-class="{success : todo.status}">
+				<td><input type="checkbox" ng-model="todo.status" ng-change="updateTodo(todo);"></td>
+				<td ng-hide="editingTitle" ng-click="editingTitle = true">{{todo.title}}</td>
+				<td ng-show="editingTitle">
+				  <form ng-submit="editingTitle = false; updateTodo(todo);">
+				    <input type="text" ng-model="todo.title" autofocus/>
+				    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+				   </form>
+				</td>
+				<td ng-hide="editingDescription" ng-click="editingDescription = true">{{todo.description}}</td>
+				<td ng-show="editingDescription">
+				  <form ng-submit="editingDescription = false; updateTodo(todo);">
+				    <input type="text" ng-model="todo.description" autofocus/>
+				    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+				  </form>
+				</td>
 				<td><a ng-click="deleteTodo(todo)">delete</a>
 			</tr>
 		</tbody>
