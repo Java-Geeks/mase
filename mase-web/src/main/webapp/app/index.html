@@ -6,19 +6,23 @@
 <link rel="stylesheet" href="css/app.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/jumbotron-narrow.css" />
 </head>
 <body>
-	<div class="container-narrow">
-		<div class="masthead">
-			<h3 class="muted">Mase Application : 1-0-SNAPSHOT</h3>
+	<div class="container">
+		<div class="header" ng-controller="HeaderController">
+			<ul class="nav nav-pills pull-right">
+				<li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+				<li ng-class="{ active: isActive('/register')}"><a href="#/register">Register</a></li>
+				<li ng-class="{ active: isActive('/login')}"><a href="#/login">Sign in</a></li>
+				<li ng-class="{ active: isActive('/todos')}"><a href="#/todos">Todos</a></li>
+			</ul>
+			<h3 class="text-muted">Mase</h3>
 		</div>
-		<hr>
-		<h1>todos</h1>
-
 		<div ng-view></div>
-		
+
 		<div class="footer">
-			<p>Credits: JavaGeeks</p>
+			<p>&copy; JavaGeeks 2014</p>
 		</div>
 	</div>
 

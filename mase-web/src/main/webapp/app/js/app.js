@@ -11,6 +11,9 @@ var maseApp = angular.module('maseApp', [
 ]);
 
 maseApp.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
+	$routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'RegisterCtrl'});
+	$routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
   $routeProvider.when('/todos', {templateUrl: 'partials/todo-list.html', controller: 'TodoListCtrl'});
-  $routeProvider.otherwise({redirectTo: '/todos'});
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);

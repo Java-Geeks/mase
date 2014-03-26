@@ -4,6 +4,29 @@
 
 var maseControllers = angular.module('maseAppControllers', []);
 
+/* Navigation bar controller */
+function HeaderController($scope, $location) { 
+  $scope.isActive = function (viewLocation) {
+  	return viewLocation === $location.path();
+  };
+}
+
+/* Welcome controller */
+maseControllers.controller('HomeCtrl', ['$scope', function($scope) {
+	
+}]);
+
+/* Login controller */
+maseControllers.controller('LoginCtrl', ['$scope', function($scope) {
+	
+}]);
+
+/* Register controller */
+maseControllers.controller('RegisterCtrl', ['$scope', function($scope) {
+	
+}]);
+
+/* Todo list controller */
 maseControllers.controller('TodoListCtrl', ['$scope', 'Todo', function ($scope, Todo) {
   $scope.todos = Todo.query();
   
@@ -30,5 +53,6 @@ maseControllers.controller('TodoListCtrl', ['$scope', 'Todo', function ($scope, 
   
   $scope.updateTodo = function(todo) {
     todo.$update();
-  }
+  };
 }]);
+
