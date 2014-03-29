@@ -10,7 +10,9 @@ var maseApp = angular.module('maseApp', [
   'maseAppDirectives'
 ]);
 
-maseApp.config(['$routeProvider', function($routeProvider) {
+maseApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+	$httpProvider.responseInterceptors.push('httpInterceptor');
+
 	$routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
 	$routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'RegisterCtrl'});
 	$routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});

@@ -14,7 +14,7 @@ public class SessionHandlerInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler) throws Exception {
         if (sessionData.getUser() == null) {
-            response.sendRedirect("/login");
+        	response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
             return false;
         } else {
             return true;
