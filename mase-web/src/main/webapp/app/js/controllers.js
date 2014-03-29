@@ -17,8 +17,21 @@ maseControllers.controller('HomeCtrl', ['$scope', function($scope) {
 }]);
 
 /* Login controller */
-maseControllers.controller('LoginCtrl', ['$scope', function($scope) {
+maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
 	
+	$scope.loginUser = function() {
+		var param = { 
+				email: $scope.email,
+	      password: $scope.password
+	  };
+		UserService.login(param, 
+      function success () {
+        $location.path("/");
+      }, function error () {
+      	console.log("[LoginCtrl] Error login");
+      }
+    );
+	};
 }]);
 
 /* Register controller */
@@ -34,10 +47,10 @@ maseControllers.controller('TodoListCtrl', ['$scope', 'Todo', function ($scope, 
 		var saveTodo = new Todo(todo);
 		  saveTodo.$save(
 		    function success (createdTodo, putResponseHeaders) {
-			  $scope.todos.push(createdTodo);
-			  $scope.newTodo = "";
-			}, function error (httpResponse) {
-				console.log("Error while creating new todo !");
+				  $scope.todos.push(createdTodo);
+				  $scope.newTodo = "";
+				}, function error (httpResponse) {
+					console.log("Error while creating new todo !");
 			});
 	 
   };
@@ -45,7 +58,7 @@ maseControllers.controller('TodoListCtrl', ['$scope', 'Todo', function ($scope, 
   $scope.deleteTodo = function(todo) {
 		todo.$delete(
 		  function success(deletedTodo, responseHeaders) {
-			$scope.todos.splice($scope.todos.indexOf(deletedTodo), 1);
+		  	$scope.todos.splice($scope.todos.indexOf(deletedTodo), 1);
 			}, function error(httpResponse) {
 				console.log("Error while deleting todo with id : " + todo.id); 
 			});
