@@ -18,6 +18,7 @@ maseControllers.controller('HomeCtrl', ['$scope', function($scope) {
 
 /* Login controller */
 maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+	$scope.authenticationError = false;
 	
 	$scope.loginUser = function() {
 		var param = { 
@@ -29,6 +30,7 @@ maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', f
         $location.path("/");
       }, function error () {
       	console.log("[LoginCtrl] Error login");
+      	$scope.authenticationError = true;
       }
     );
 	};
