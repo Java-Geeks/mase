@@ -2,6 +2,8 @@ package io.github.javageeks.mase.service;
 
 import io.github.javageeks.mase.model.User;
 
+import java.util.List;
+
 /**
  * User business service interface.
  */
@@ -41,5 +43,12 @@ public interface UserService {
      * @return the user with the given email and password or null if no user found
      */
     User findByEmailAndPassword(String email, String password);
+    
+    /**
+     * Find all users
+     * 
+     * @return all users
+     */
+    List<User> findAll();
 
 }

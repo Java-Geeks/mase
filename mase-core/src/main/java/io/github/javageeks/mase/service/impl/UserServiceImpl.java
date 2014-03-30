@@ -1,8 +1,11 @@
 package io.github.javageeks.mase.service.impl;
 
+import java.util.List;
+
 import io.github.javageeks.mase.model.User;
 import io.github.javageeks.mase.repository.UserRepository;
 import io.github.javageeks.mase.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -37,5 +40,10 @@ public class UserServiceImpl implements UserService {
     public User findByEmailAndPassword(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password);
     }
+
+	@Override
+	public List<User> findAll() {
+		return userRepository.findAll();
+	}
 
 }

@@ -37,8 +37,29 @@ maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', f
 }]);
 
 /* Register controller */
-maseControllers.controller('RegisterCtrl', ['$scope', function($scope) {
-	
+maseControllers.controller('RegisterCtrl', ['$scope', 'Account', function($scope, Account) {
+	$scope.success = null;
+	$scope.authenticationError = null;
+	$scope.doNotMatch = null;
+	$scope.registerUser = function() {
+			if ($scope.user.password != $scope.confirmPassword) {
+				$scope.doNotMatch = "ERROR";
+			} else {
+				$scope.doNotMatch = null;
+				Account.save($scope.user,
+						function (value, responseHeaders) {
+							$scope.success = "OK";
+							$scope.authenticationError = null;
+							$scope.user = null;
+							$scope.confirmPassword = null;
+						},
+						function (httpResponse) {
+							$scope.authenticationError = "ERROR";
+							$scope.success = null;
+						}
+				);
+			}
+	};
 }]);
 
 /* Todo list controller */

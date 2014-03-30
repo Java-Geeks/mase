@@ -13,6 +13,12 @@ maseServices.factory('Todo', ['$resource',
     );
 }]);
 
+maseServices.factory('Account', ['$resource',
+	function ($resource) {
+	    return $resource(baseUrl + '/mase-ws/account', {}, {
+	    });
+	}]);
+
 maseServices.factory('UserService', ['$http',
   function($http) {
 	  return {

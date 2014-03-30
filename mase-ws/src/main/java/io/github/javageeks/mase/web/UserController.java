@@ -1,7 +1,5 @@
 package io.github.javageeks.mase.web;
 
-import java.io.IOException;
-
 import io.github.javageeks.mase.model.User;
 import io.github.javageeks.mase.service.UserService;
 import io.github.javageeks.mase.web.util.SessionData;
@@ -38,16 +36,13 @@ public class UserController {
 
     @RequestMapping(value = "/account" , method = RequestMethod.POST)
     public @ResponseBody
-    User registerNewAccount(@RequestBody User user) {
-
+    User registerNewAccount(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) throws Exception {
         if (userService.findByEmail(user.getEmail()) != null) {
-            //user exists, TODO : return error status code
+        	response.sendError(HttpServletResponse.SC_BAD_REQUEST);
             return null;
         }
-
         user = userService.saveOrUpdate(user);
         sessionData.setUser(user);
-
         return user;
     }
 
