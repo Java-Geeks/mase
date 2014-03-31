@@ -35,8 +35,6 @@ Then, please follow these instructions :
 5. `vagrant up`
 6. browse the following URL: `http://localhost:9000`
 
-> application supports live deployment, each time you modify your web application, run mvn clean install, refresh you browser and the new version will be available
-
 ### Optional : packaging the VM
 
 To package the VM for further reuse without re-installing all dependencies, you can proceed as follows:
