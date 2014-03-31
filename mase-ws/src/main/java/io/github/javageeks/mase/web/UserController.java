@@ -95,7 +95,7 @@ public class UserController {
     */
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public @ResponseBody User login(@RequestParam String email, @RequestParam  String password, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public @ResponseBody User login(@RequestParam String email, @RequestParam  String password, HttpServletResponse response) throws Exception {
         User user = userService.findByEmailAndPassword(email, password);
         if (user == null) {
         	response.sendError(HttpServletResponse.SC_BAD_REQUEST);
