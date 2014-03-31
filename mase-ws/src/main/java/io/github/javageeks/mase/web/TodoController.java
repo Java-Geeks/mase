@@ -5,6 +5,7 @@ import io.github.javageeks.mase.service.TodoService;
 
 import java.util.List;
 
+import io.github.javageeks.mase.web.util.SessionData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +19,13 @@ public class TodoController {
 	@Autowired
 	private TodoService todoService;
 
+    @Autowired
+    private SessionData sessionData;
+
 	@RequestMapping(value = "/todos", method = RequestMethod.GET)
 	public @ResponseBody
 	List<Todo> getAllTodo() {
-        // return all todos for user in session
-		return todoService.findAll();
+		return todoService.findAll(sessionData.getUser().getId());
 	}
 
 	@RequestMapping(value = "/todos/{todoId}", method = RequestMethod.GET)

@@ -33,8 +33,8 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public List<Todo> findAll() {
-        return todoRepository.findAll();
+    public List<Todo> findAll(String userId) {
+        return todoRepository.findByUserId(userId);
     }
 
 }

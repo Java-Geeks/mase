@@ -30,9 +30,9 @@ public interface TodoService {
     Todo findById(String id);
 
     /**
-     * Return all todos.
-     * @return all todos
+     * Return all todos for a given user.
+     * @return all todos for the given user
      */
-    List<Todo> findAll();
+    List<Todo> findAll(String userId);
 
 }
