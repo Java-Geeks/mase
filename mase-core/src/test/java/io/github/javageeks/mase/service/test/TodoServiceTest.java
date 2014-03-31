@@ -35,13 +35,13 @@ public class TodoServiceTest {
         // test findById
         Todo t = todoService.findById("1");
         assertEquals("1", t.getId());
-        assertEquals(1, t.getUserId());
+        assertEquals("1", t.getUserId());
         assertEquals("Test Todo", t.getTitle());
         assertEquals("Todo used for test", t.getDescription());
         assertEquals(false, t.getStatus());
 
         //test find all
-        List<Todo> todos = todoService.findAll();
+        List<Todo> todos = todoService.findAll("1");
         assertEquals(1, todos.size());
 
     }
