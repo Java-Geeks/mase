@@ -15,7 +15,7 @@ public interface TodoRepository extends MongoRepository<Todo, String> {
      * @param userId the user id
      * @return the todo list for the given user
      */
-    List<Todo> findByUserId(long userId);
+    List<Todo> findByUserId(String userId);
 
     /**
      * Find todo list by title.
@@ -23,7 +23,7 @@ public interface TodoRepository extends MongoRepository<Todo, String> {
      * @param title the todo title
      * @return the todo list with the given todo title
      */
-    List<Todo> findByUserIdAndTitleLike(long userId, String title);
+    List<Todo> findByUserIdAndTitleLike(String userId, String title);
 
     /**
      * Find todo list by description.
@@ -31,7 +31,7 @@ public interface TodoRepository extends MongoRepository<Todo, String> {
      * @param description the todo description
      * @return the todo list with the given todo description
      */
-    List<Todo> findByUserIdAndDescriptionLike(long userId, String description);
+    List<Todo> findByUserIdAndDescriptionLike(String userId, String description);
 
     /**
      * Find todo list by todo status.
@@ -39,6 +39,6 @@ public interface TodoRepository extends MongoRepository<Todo, String> {
      * @param status the todo status
      * @return the todo list with the given todo status
      */
-    List<Todo> findByUserIdAndStatusIsTrue(long userId, boolean status);
+    List<Todo> findByUserIdAndStatusIsTrue(String userId, boolean status);
 
 }
