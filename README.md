@@ -8,7 +8,7 @@ MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</s
 
 * [AngularJS](http://angularjs.org/)
 * [Twitter bootstrap](http://getbootstrap.com/)
-* [HTML5](http://www.w3.org/TR/html5/), [CSS3](http://www.w3schools.com/css/css3_intro.asp), [JQuery](http://jquery.com/)
+* [HTML5](http://www.w3.org/TR/html5/) and [CSS3](http://www.w3schools.com/css/css3_intro.asp)
 
 ## Server side
 
