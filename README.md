@@ -27,13 +27,13 @@ To keep running the application as simple as possible, we provide a pre-built [V
 
 To run the application, please ensure that you have Virtual Box and Vagrant correctly installed and running. 
 
-Then, please follow these instructions :
+Then, you can follow these instructions :
 
 1. `git clone https://github.com/Java-Geeks/mase.git`
 2. `cd mase`
-4. `mvn install`
-5. `vagrant up`
-6. browse the following URL: `http://localhost:9000`
+3. `mvn install`
+4. `vagrant up`
+5. browse the following URL: `http://localhost:9000`
 
 ### Optional : packaging the VM
 
