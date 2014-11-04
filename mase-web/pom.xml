@@ -15,13 +15,9 @@
 
     <build>
         <outputDirectory>target/www</outputDirectory>
-        <sourceDirectory>src/main/webapp/app</sourceDirectory>
         <resources>
             <resource>
-                <directory>src/main/webapp/app</directory>
-            </resource>
-            <resource>
-                <directory>src/main/webapp/resources</directory>
+                <directory>src/main/webapp</directory>
             </resource>
         </resources>
     </build>
