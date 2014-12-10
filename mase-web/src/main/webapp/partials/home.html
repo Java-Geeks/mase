@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" ng-controller="HomeCtrl">
 	<h1>Welcome to MASE !</h1>
 	<p class="lead">MASE is a task manager, based on the latest web technologies which allows you to :
 		<ul class="list-unstyled">
@@ -7,9 +7,12 @@
 			<li>Sort and filter your todo list</li>
 		</ul>
 	</p>
-	<p>
+	<p ng-hide="isLoggedIn()">
 		<a class="btn btn-lg btn-success" href="#/register" role="button">Sign up</a>
 		or
 		<a class="btn btn-lg btn-success" href="#/login" role="button">Sign in</a>
 	</p>
+    <p ng-show="isLoggedIn()">
+        <a class="btn btn-lg btn-success" href="#/todos" role="button">Go to my todo list</a>
+    </p>
 </div>

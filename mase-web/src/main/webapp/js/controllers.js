@@ -5,19 +5,25 @@
 var maseControllers = angular.module('maseAppControllers', []);
 
 /* Navigation bar controller */
-maseControllers.controller('HeaderCtrl', ['$scope', '$location', function($scope, $location) {
+maseControllers.controller('HeaderCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
   $scope.isActive = function (viewLocation) {
   	return viewLocation === $location.path();
-  }
+    };
+
+    $scope.isLoggedIn = function () {
+        return $rootScope.isLoggedIn === true;
+    };
 }]);
 
 /* Welcome controller */
-maseControllers.controller('HomeCtrl', ['$scope', function($scope) {
-	
+maseControllers.controller('HomeCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+    $scope.isLoggedIn = function () { //todo refactor duplicate function in HeaderCtrl
+        return $rootScope.isLoggedIn === true;
+    };
 }]);
 
 /* Login controller */
-maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+maseControllers.controller('LoginCtrl', ['$scope','$rootScope', '$location', 'UserService', function($scope, $rootScope, $location, UserService) {
 	$scope.authenticationError = false;
 	
 	$scope.loginUser = function() {
@@ -27,6 +33,7 @@ maseControllers.controller('LoginCtrl', ['$scope', '$location', 'UserService', f
 	  };
 		UserService.login(param, 
       function success () {
+          $rootScope.isLoggedIn = true;
         $location.path("/");
       }, function error () {
       	console.log("[LoginCtrl] Error login");
