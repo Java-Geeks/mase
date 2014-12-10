@@ -5,11 +5,11 @@
 var maseControllers = angular.module('maseAppControllers', []);
 
 /* Navigation bar controller */
-function HeaderController($scope, $location) { 
+maseControllers.controller('HeaderCtrl', ['$scope', '$location', function($scope, $location) {
   $scope.isActive = function (viewLocation) {
   	return viewLocation === $location.path();
-  };
-}
+  }
+}]);
 
 /* Welcome controller */
 maseControllers.controller('HomeCtrl', ['$scope', function($scope) {
