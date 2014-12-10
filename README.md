@@ -1,6 +1,6 @@
 # About MASE
 
-MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</strong>pring-<strong>E</strong>lasticsearch and uses many other modern web technologies :
+MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</strong>pring-<strong>E</strong>lasticsearch and is a simple yet complete online todo list manager using the following technologies:
 
 ![mase](https://github.com/Java-Geeks/mase/raw/master/site/mase.png)
 
@@ -17,9 +17,7 @@ MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</s
 * [Spring MVC](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
 * [ElasticSearch](http://www.elasticsearch.org/)
 
-The application is a simple yet complete online todo list manager.
-
-Backend services are exposed through RESTful APIs which are documented using [Swagger](https://github.com/wordnik/swagger-core).
+Backend services are exposed through RESTful APIs.
 
 # Run the application
 
@@ -33,7 +31,7 @@ Then, you can follow these instructions :
 2. `cd mase`
 3. `mvn install`
 4. `vagrant up`
-5. browse the following URL: `http://localhost:9100`
+5. browse the following URL: `http://localhost:9100/mase-web`
 
 ### Optional : packaging the VM
 
