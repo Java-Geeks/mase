@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mase-core</artifactId>
-    <name>MASE core module</name>
+    <name>MASE back-end module</name>
     <description>Core module providing backend services</description>
 
     <properties>

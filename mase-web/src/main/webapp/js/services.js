@@ -8,14 +8,14 @@ var baseUrl = 'http://localhost:9100';
 
 maseServices.factory('Todo', ['$resource',
   function($resource){
-    return $resource(baseUrl + '/mase-ws/todos/:id', {id : '@id'},
+    return $resource(baseUrl + '/mase-web/todos/:id', {id : '@id'},
     	{ 'update': {method: 'PUT'} }
     );
 }]);
 
 maseServices.factory('Account', ['$resource',
 	function ($resource) {
-	    return $resource(baseUrl + '/mase-ws/account', {}, {
+	    return $resource(baseUrl + '/mase-web/account', {}, {
 	    });
 	}]);
 
@@ -24,7 +24,7 @@ maseServices.factory('UserService', ['$http',
 	  return {
 	  	login: function (param, success, error) {
         var data = "email=" + param.email +"&password=" + param.password;
-        var promise = $http.post(baseUrl + '/mase-ws/login', data, {
+        var promise = $http.post(baseUrl + '/mase-web/login', data, {
           headers: {
               "Content-Type": "application/x-www-form-urlencoded"
           }});

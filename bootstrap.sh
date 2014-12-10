@@ -2,10 +2,6 @@
 
 sudo apt-get update
 
-#install apache server
-echo "### Installing Apache ###"
-sudo apt-get install -y apache2
-
 #install mangodb
 echo '### Installing MongoDB ###'
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -35,15 +31,8 @@ sudo apt-get install -y curl
 echo '### Installing Git ###'
 sudo apt-get install -y git
 
-#create a symbolic link for the web app to be served by apache web server
-sudo rm -rf /var/www
-if [ ! -d "/vagrant/mase-web/target/www" ]; then
-    mkdir -p /vagrant/mase-web/target/www
+#create a symbolic link for the front-end to be served by apache tomcat
+if [ ! -d "/vagrant/mase-web/target/mase-web" ]; then
+    mkdir -p /vagrant/mase-web/target/mase-web
 fi
-sudo ln -fs /vagrant/mase-web/target/www /var/www
-
-#create a symbolic link for the web services app to be served by apache tomcat
-if [ ! -d "/vagrant/mase-ws/target/mase-ws" ]; then
-    mkdir -p /vagrant/mase-ws/target/mase-ws
-fi
-sudo ln -fs /vagrant/mase-ws/target/mase-ws /var/lib/tomcat7/webapps/mase-ws
+sudo ln -fs /vagrant/mase-web/target/mase-web /var/lib/tomcat7/webapps/mase-web

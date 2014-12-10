@@ -25,4 +25,6 @@
         <aop:scoped-proxy/>
     </bean>
 
+    <mvc:default-servlet-handler/>
+
 </beans>

@@ -33,7 +33,7 @@ Then, you can follow these instructions :
 2. `cd mase`
 3. `mvn install`
 4. `vagrant up`
-5. browse the following URL: `http://localhost:9000`
+5. browse the following URL: `http://localhost:9100`
 
 ### Optional : packaging the VM
 
