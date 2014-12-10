@@ -5,13 +5,24 @@
 var maseControllers = angular.module('maseAppControllers', []);
 
 /* Navigation bar controller */
-maseControllers.controller('HeaderCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+maseControllers.controller('HeaderCtrl', ['$scope', '$rootScope', '$location', 'UserService', function($scope, $rootScope, $location, UserService) {
   $scope.isActive = function (viewLocation) {
   	return viewLocation === $location.path();
     };
 
     $scope.isLoggedIn = function () {
         return $rootScope.isLoggedIn === true;
+    };
+
+    $scope.logoutUser = function() {
+        UserService.logout(
+            function success () {
+                $rootScope.isLoggedIn = false;
+                $location.path("/");
+            }, function error () {
+                console.log("[LoginCtrl] Logout error");
+            }
+        );
     };
 }]);
 

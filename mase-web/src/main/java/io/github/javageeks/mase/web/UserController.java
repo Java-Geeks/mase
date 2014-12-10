@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
+
 /**
  * User web controller.
  */
@@ -103,6 +105,18 @@ public class UserController {
         }
         sessionData.setUser(user);
         return user;
+    }
+
+    /*
+    **********************
+    * Logout user
+    **********************
+    */
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public void logout(HttpServletResponse response) throws IOException {
+        sessionData.setUser(null);
+        response.setStatus(HttpServletResponse.SC_OK);
     }
 
 }

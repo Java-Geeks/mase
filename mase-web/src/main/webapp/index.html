@@ -16,6 +16,7 @@
 				<li ng-hide="isLoggedIn()" ng-class="{ active: isActive('/register')}"><a href="#/register">Register</a></li>
 				<li ng-hide="isLoggedIn()" ng-class="{ active: isActive('/login')}"><a href="#/login">Sign in</a></li>
 				<li ng-show="isLoggedIn()" ng-class="{ active: isActive('/todos')}"><a href="#/todos">Todos</a></li>
+				<li ng-show="isLoggedIn()" ><a ng-click="logoutUser()">Sign out</a></li>
 			</ul>
 			<h3 class="text-muted">Mase</h3>
 		</div>

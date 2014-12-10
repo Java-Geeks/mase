@@ -40,7 +40,23 @@ maseServices.factory('UserService', ['$http',
           	 error(status);
            }
         });
-	  	}
+	  	},
+
+          logout: function(success, error) {
+              var promise = $http.get(baseUrl + '/mase-web/logout');
+              promise.success(function () {
+                  console.log("logout successful !");
+                  if (success) {
+                      success();
+                  }
+              });
+              promise.error(function () {
+                  console.log("logout error!");
+                  if (error) {
+                      error();
+                  }
+              });
+          }
 	  };
 }]);
 		
