@@ -26,20 +26,23 @@ public class DatabasePopulator {
 
     @PostConstruct
     public void populateDatabase() {
+    	if (userService.findByEmail("foo@bar.org") == null) {
+	        User user = new User();
+	        user.setFirstName("Foo");
+	        user.setLastName("Bar");
+	        user.setEmail("foo@bar.org");
+	        user.setPassword("foobar");
+	        user = userService.saveOrUpdate(user);
+	        
+	        Todo todo = new Todo();
+	        todo.setUserId(user.getId());
+	        todo.setTitle("Milk");
+	        todo.setDescription("Remember the milk!");
+	        todo.setStatus(false);
+	        todoService.saveOrUpdate(todo);
+    	}
 
-        User user = new User();
-        user.setFirstName("Foo");
-        user.setLastName("Bar");
-        user.setEmail("foo@bar.org");
-        user.setPassword("foobar");
-        user = userService.saveOrUpdate(user);
-
-        Todo todo = new Todo();
-        todo.setUserId(user.getId());
-        todo.setTitle("Milk");
-        todo.setDescription("Remember the milk!");
-        todo.setStatus(false);
-        todoService.saveOrUpdate(todo);
+    	
 
     }
 

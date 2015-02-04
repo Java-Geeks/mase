@@ -87,8 +87,8 @@
                 <version>2.2</version>
                 <configuration>
                     <warFile>target/mase-web.war</warFile>
-                    <path>/</path>
-                    <port>8888</port>
+                    <path>/mase-web</path>
+                    <port>9100</port>
                 </configuration>
             </plugin>
         </plugins>

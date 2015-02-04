@@ -9,7 +9,9 @@ import java.io.Serializable;
  */
 public class SessionData implements Serializable {
 
-    /**
+	private static final long serialVersionUID = -1625404151359090932L;
+
+	/**
      * The logged user.
      */
     private User user;
