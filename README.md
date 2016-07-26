@@ -1,3 +1,5 @@
+:exclamation: **Note: This project is not maintained anymore.**
+
 # About MASE
 
 MASE stands for <strong>M</strong>ongodb-<strong>A</strong>ngularjs-<strong>S</strong>pring-<strong>E</strong>lasticsearch and is a simple yet complete online todo list manager using the following technologies:
